@@ -27,7 +27,16 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'pry'
+# Twitter's toolkit for kickstarting your site or app's CSS
+gem 'less-rails-bootstrap'
+
+group :development, :test do
+  # Required for twitter-bootstrap-rails
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem 'therubyracer', platforms: :ruby
+  # Debugging
+  gem 'pry'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
