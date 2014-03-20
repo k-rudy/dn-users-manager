@@ -3,17 +3,6 @@
 <%= render 'shared/flash_messages' %>
 <%= render 'shared/error_messages', model: @user %>
 
-<table>
-  <thead>
-    <th>Name</th>
-  </thead>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.name %></td>
-    </tr>
-  <% end %>
-</table>  
-
-<br/>
+<%= render 'users' %>
 
 <%= render 'new' %>
