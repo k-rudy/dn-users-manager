@@ -1,3 +1,16 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  
+  initForm = () ->
+    $('#new_user').submit(submitUserHandler)
+   
+  submitUserHandler = () -> 
+    $form = $('#new_user')
+    action = $form.data('action')
+    $.post(action, $form.serialize(), createUserHandler)
+    return false
+    
+  createUserHandler = (data) ->
+    $('#content').html(data)
+    initForm()  
+  
+  initForm()

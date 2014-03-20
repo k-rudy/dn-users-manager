@@ -7,9 +7,15 @@ class UsersController < ApplicationController
   
   def create
     user = User.create(user_params)
+    if user.valid?
+      flash.now[:notice] = 'User created successfully'
+      @user = User.new 
+    else
+      @user = user
+    end
     @users = User.all
-    @user = user.valid? ? User.new : user
-    render 'index'
+    
+    render 'index', layout: false
   end
   
   private

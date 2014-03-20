@@ -37,6 +37,11 @@ describe UsersController do
         expect(response).to render_template('index')
       end
       
+      it 'doesnt apply user status provided with params' do
+        get :create, {user: { status: 'active', name: 'name' }}
+        expect(User.first.status).to be_blank
+      end
+      
       it 'assigns new user as @user' do
         get :create, valid_params
         expect(assigns(:user)).to be_new_record

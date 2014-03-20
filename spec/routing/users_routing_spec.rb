@@ -8,8 +8,8 @@ describe UsersController do
       expect(get "/users").to route_to("users#index")
     end
     
-    it "routes GET /users/create to :create" do
-      expect(get "/users/create").to route_to("users#create")
+    it "routes POST /usersto :create" do
+      expect(post "/users").to route_to("users#create")
     end
   end
 end
