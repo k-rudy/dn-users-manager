@@ -8,6 +8,10 @@ describe User do
     it { should have_and_belong_to_many(:permissions) }
   end
   
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+  end
+  
   describe '#all_permissions' do
     
     let!(:role) { create(:role) }
