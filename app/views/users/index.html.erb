@@ -1,5 +1,8 @@
 <h1>Users list</h1>
 
+<%= render 'shared/flash_messages' %>
+<%= render 'shared/error_messages', model: @user %>
+
 <table>
   <thead>
     <th>Name</th>
@@ -10,3 +13,7 @@
     </tr>
   <% end %>
 </table>  
+
+<br/>
+
+<%= render 'new' %>

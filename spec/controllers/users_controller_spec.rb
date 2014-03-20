@@ -10,5 +10,10 @@ describe UsersController do
       get :index
       expect(assigns[:users]).to eq([ user ])
     end
+    
+    it 'assigns new user as @user' do
+      get :index
+      expect(assigns[:user]).to be_present
+    end
   end
 end
