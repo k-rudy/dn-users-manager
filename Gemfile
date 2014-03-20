@@ -32,14 +32,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :test do
+  # Test coverage measurement
+  gem 'simplecov', require: false
 
-# Use unicorn as the app server
-# gem 'unicorn'
+  # Testing framework
+  gem 'rspec-rails', '~> 2.0'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+  # Simplifies testing common rails functionality like entity relations and validations
+  gem "shoulda-matchers"
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+  # Test factories lib
+  gem 'factory_girl'
+end
