@@ -1,0 +1,16 @@
+development: &default
+  adapter: mysql2
+  encoding: utf8
+  database: user_manager_dev
+  username: USERNAME
+  password: PASSWORD
+  host: 127.0.0.1
+  port: 3306
+
+test:
+  <<: *default
+  database: user_manager_test
+
+production:
+  <<: *default
+  database: user_manager_prod
